@@ -11,6 +11,24 @@ model User {
   id               Int      @id @default(autoincrement())
   telegramId       BigInt   @unique
   telegramUsername String?
-  spreadsheetId    String
+  email            String?  @unique
+  spreadsheetId    String?
   createdAt        DateTime @default(now())
+  updatedAt        DateTime @default(now()) @updatedAt
+  launches         Launch[]
+}
+
+model Launch {
+  id               Int      @id @default(autoincrement())
+  userId           Int
+  date             DateTime
+  amount           Float
+  type             String // 'income' ou 'expense'
+  paymentMethod    String
+  macroCategory    String
+  detailedCategory String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id])
 }

@@ -1,5 +1,5 @@
 interface IntentDetectionResponse {
-  type: "expense" | "query" | "other";
+  type: "expense" | "query" | "income" | "registration" | "other";
 }
 
 interface ExpenseAnalysisResponse {
@@ -10,6 +10,7 @@ interface ExpenseAnalysisResponse {
     macro_category: string;
     detailed_category: string;
     date: string;
+    type: "income" | "expense";
   };
   message?: string;
 }
