@@ -1,0 +1,17 @@
+# Ignorar Node modules
+node_modules/
+
+# Ignorar variáveis de ambiente
+.env
+
+# Ignorar credenciais privadas
+credentials-google.json
+
+# Ignorar arquivos de logs
+*.log
+
+# Ignorar arquivos de cache
+.cache/
+dist/
+/src/generated/prisma
+/src/db
